@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#090909">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>SPYNR Direct Drive UI</title>
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <main id="app">
+    <section id="ui" aria-label="SPYNR direct drive motor controller">
+
+      <header class="topbar">
+        <div class="brand">SPYNR</div>
+
+        <button id="modeToggle" class="mode-toggle hit phone-active" type="button" aria-label="Phone or Hardware control">
+          <span class="mode-label phone-label">PHONE</span>
+          <span class="mode-label hardware-label">HARDWARE</span>
+          <span class="mode-light phone"></span>
+          <span class="mode-light hardware"></span>
+          <span class="toggle-track" aria-hidden="true"></span>
+          <span id="toggleKnob" class="toggle-metal-knob" aria-hidden="true"></span>
+        </button>
+      </header>
+
+      <section class="main-grid">
+        <div class="left-stack">
+          <div class="pitch-display-shell panel">
+            <span class="pm plus">+</span>
+            <span class="pm minus">−</span>
+
+            <div id="pitchDisplay" class="pitch-display" aria-label="Pitch value">
+              <div class="digit" data-index="0"></div>
+              <div class="digit" data-index="1"></div>
+              <span class="decimal"></span>
+              <div class="digit" data-index="2"></div>
+            </div>
+          </div>
+
+          <div class="rpm-row">
+            <button id="rpm33" class="rpm-btn hit selected" type="button" aria-label="33 RPM">
+              <span class="rpm-ring"></span>
+              <span class="rpm-led"></span>
+              <span class="rpm-label">33</span>
+            </button>
+
+            <button id="rpm45" class="rpm-btn hit" type="button" aria-label="45 RPM">
+              <span class="rpm-ring"></span>
+              <span class="rpm-led"></span>
+              <span class="rpm-label">45</span>
+            </button>
+          </div>
+        </div>
+
+        <div id="fineZone" class="fine-zone panel slider-zone" aria-label="Fine pitch">
+          <div class="fine-title">FINE PITCH</div>
+
+          <div id="fineScaleBody" class="fine-scale-body">
+            <div class="fine-track"></div>
+            <div class="fine-scale fine-left"></div>
+            <div class="fine-scale fine-right"></div>
+
+            <div class="fine-value v8">+8</div>
+            <div class="fine-value v4">+4</div>
+            <div class="fine-value v0">0</div>
+            <div class="fine-value vm4">-4</div>
+            <div class="fine-value vm8">-8</div>
+
+            <div id="fineKnob" class="fine-knob knob" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <div id="ultraZone" class="ultra-zone panel slider-zone" aria-label="Ultra pitch">
+        <div class="ultra-title">ULTRA PITCH</div>
+
+        <div id="ultraScaleBody" class="ultra-scale-body">
+          <div class="ultra-track"></div>
+          <div class="ultra-scale"></div>
+
+          <div id="ultraKnob" class="ultra-knob knob" aria-hidden="true"></div>
+        </div>
+
+        <div class="ultra-values">
+          <span>-50</span><span>0</span><span>+50</span>
+        </div>
+      </div>
+
+      <button id="startStop" class="start-stop hit panel" type="button" aria-label="Start Stop">
+        <span class="start-rim"></span>
+        <span class="start-label">START / STOP</span>
+      </button>
+
+    </section>
+  </main>
+  <script src="script.js?v=1"></script>
+</body>
+</html>

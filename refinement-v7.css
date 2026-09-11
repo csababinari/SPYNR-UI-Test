@@ -1,0 +1,142 @@
+/* v7 — Original design fidelity overrides.
+   Static panel artwork is cropped from the approved original UI; dynamic controls remain live overlays. */
+
+/* ORIGINAL PITCH DISPLAY PANEL */
+.pitch-panel{
+  left:30px !important;
+  top:238px !important;
+  width:488px !important;
+  height:262px !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:transparent url("assets/display_panel.webp?v=7") center/100% 100% no-repeat !important;
+}
+.pitch-panel::after,
+.pitch-panel .pm{display:none !important;}
+.pitch-display{
+  left:128px !important;
+  top:67px !important;
+  width:326px !important;
+  height:160px !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:9px !important;
+  transform:scale(1.09) !important;
+  transform-origin:center center !important;
+  z-index:5 !important;
+}
+.pitch-display .digit{
+  position:relative !important;
+  width:88px !important;
+  height:148px !important;
+  flex:0 0 88px !important;
+}
+.pitch-display .segment{position:absolute !important;display:block !important;background:#290e0f !important;box-shadow:none !important;}
+.pitch-display .segment.on{
+  background:#ff1830 !important;
+  box-shadow:0 0 5px rgba(255,0,30,.95),0 0 14px rgba(255,0,30,.70),0 0 26px rgba(255,0,30,.24) !important;
+}
+.pitch-display .segment.h{
+  left:15px !important;width:59px !important;height:17px !important;
+  clip-path:polygon(12% 0,88% 0,100% 50%,88% 100%,12% 100%,0 50%) !important;
+}
+.pitch-display .segment.v{
+  width:17px !important;height:59px !important;
+  clip-path:polygon(0 12%,50% 0,100% 12%,100% 88%,50% 100%,0 88%) !important;
+}
+.pitch-display .segment.a{top:0 !important}.pitch-display .segment.g{top:66px !important}.pitch-display .segment.d{bottom:0 !important}
+.pitch-display .segment.f{left:0 !important;top:12px !important}.pitch-display .segment.b{right:0 !important;top:12px !important}
+.pitch-display .segment.e{left:0 !important;bottom:12px !important}.pitch-display .segment.c{right:0 !important;bottom:12px !important}
+.pitch-display .decimal{
+  position:relative !important;width:15px !important;height:15px !important;flex:0 0 15px !important;
+  align-self:flex-end !important;margin:0 -1px 18px -2px !important;border-radius:50% !important;
+  background:#ff1830 !important;box-shadow:0 0 5px rgba(255,0,30,.95),0 0 13px rgba(255,0,30,.65) !important;
+}
+
+/* ORIGINAL FINE PITCH PANEL */
+.fine-panel{
+  left:527px !important;
+  top:238px !important;
+  width:280px !important;
+  height:632px !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:transparent url("assets/fine_panel.webp?v=7") center/100% 100% no-repeat !important;
+  overflow:visible !important;
+}
+.fine-panel > .panel-title,
+.fine-panel .fine-track,
+.fine-panel .fine-scale,
+.fine-panel .fine-value{display:none !important;}
+.fine-body{
+  position:absolute !important;
+  left:45px !important;
+  top:91px !important;
+  right:auto !important;
+  bottom:auto !important;
+  width:208px !important;
+  height:519px !important;
+  overflow:visible !important;
+}
+.fine-knob{
+  position:absolute !important;
+  left:34px !important;
+  top:192px;
+  width:152px !important;
+  height:135px !important;
+  transform:none !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:transparent url("assets/fine_knob.webp?v=7") center/contain no-repeat !important;
+  filter:drop-shadow(0 11px 10px rgba(0,0,0,.72));
+  touch-action:none !important;
+  cursor:grab;
+  z-index:6 !important;
+}
+.fine-knob span{display:none !important;}
+
+/* ORIGINAL ULTRA PITCH PANEL */
+.ultra-panel{
+  left:10px !important;
+  top:914px !important;
+  width:834px !important;
+  height:282px !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:transparent url("assets/ultra_panel.webp?v=7") center/100% 100% no-repeat !important;
+  overflow:visible !important;
+}
+.ultra-panel > .panel-title,
+.ultra-panel .ultra-track,
+.ultra-panel .ultra-scale,
+.ultra-panel > .ultra-value{display:none !important;}
+.ultra-body{
+  position:absolute !important;
+  left:50px !important;
+  top:98px !important;
+  right:auto !important;
+  width:752px !important;
+  height:156px !important;
+  overflow:visible !important;
+}
+.ultra-knob{
+  position:absolute !important;
+  left:305.5px;
+  top:-20px !important;
+  width:137px !important;
+  height:178px !important;
+  transform:none !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:transparent url("assets/ultra_knob.webp?v=7") center/contain no-repeat !important;
+  filter:drop-shadow(0 11px 10px rgba(0,0,0,.75));
+  touch-action:none !important;
+  cursor:grab;
+  z-index:6 !important;
+}
+.ultra-knob span{display:none !important;}

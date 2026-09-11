@@ -8,95 +8,67 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="mobile-web-app-capable" content="yes">
   <title>SPYNR Direct Drive UI</title>
-  <link rel="stylesheet" href="styles.css?v=1">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
   <main id="app">
     <section id="ui" aria-label="SPYNR direct drive motor controller">
+      <div class="brand">SPYNR</div>
 
-      <header class="topbar">
-        <div class="brand">SPYNR</div>
+      <button id="modeToggle" class="mode-toggle phone-active" type="button" aria-label="Phone or Hardware control">
+        <span class="mode-label phone-label">PHONE</span>
+        <span class="mode-label hardware-label">HARDWARE</span>
+        <span class="mode-light phone"></span>
+        <span class="mode-light hardware"></span>
+        <span class="toggle-slot"></span>
+        <span class="toggle-knob"></span>
+      </button>
 
-        <button id="modeToggle" class="mode-toggle hit phone-active" type="button" aria-label="Phone or Hardware control">
-          <span class="mode-label phone-label">PHONE</span>
-          <span class="mode-label hardware-label">HARDWARE</span>
-          <span class="mode-light phone"></span>
-          <span class="mode-light hardware"></span>
-          <span class="toggle-track" aria-hidden="true"></span>
-          <span id="toggleKnob" class="toggle-metal-knob" aria-hidden="true"></span>
-        </button>
-      </header>
-
-      <section class="main-grid">
-        <div class="left-stack">
-          <div class="pitch-display-shell panel">
-            <span class="pm plus">+</span>
-            <span class="pm minus">−</span>
-
-            <div id="pitchDisplay" class="pitch-display" aria-label="Pitch value">
-              <div class="digit" data-index="0"></div>
-              <div class="digit" data-index="1"></div>
-              <span class="decimal"></span>
-              <div class="digit" data-index="2"></div>
-            </div>
-          </div>
-
-          <div class="rpm-row">
-            <button id="rpm33" class="rpm-btn hit selected" type="button" aria-label="33 RPM">
-              <span class="rpm-ring"></span>
-              <span class="rpm-led"></span>
-              <span class="rpm-label">33</span>
-            </button>
-
-            <button id="rpm45" class="rpm-btn hit" type="button" aria-label="45 RPM">
-              <span class="rpm-ring"></span>
-              <span class="rpm-led"></span>
-              <span class="rpm-label">45</span>
-            </button>
-          </div>
-        </div>
-
-        <div id="fineZone" class="fine-zone panel slider-zone" aria-label="Fine pitch">
-          <div class="fine-title">FINE PITCH</div>
-
-          <div id="fineScaleBody" class="fine-scale-body">
-            <div class="fine-track"></div>
-            <div class="fine-scale fine-left"></div>
-            <div class="fine-scale fine-right"></div>
-
-            <div class="fine-value v8">+8</div>
-            <div class="fine-value v4">+4</div>
-            <div class="fine-value v0">0</div>
-            <div class="fine-value vm4">-4</div>
-            <div class="fine-value vm8">-8</div>
-
-            <div id="fineKnob" class="fine-knob knob" aria-hidden="true"></div>
-          </div>
+      <section class="pitch-panel panel">
+        <span class="pm plus">+</span>
+        <span class="pm minus">−</span>
+        <div id="pitchDisplay" class="pitch-display" aria-label="Pitch value">
+          <div class="digit"></div><div class="digit"></div><span class="decimal"></span><div class="digit"></div>
         </div>
       </section>
 
-      <div id="ultraZone" class="ultra-zone panel slider-zone" aria-label="Ultra pitch">
-        <div class="ultra-title">ULTRA PITCH</div>
-
-        <div id="ultraScaleBody" class="ultra-scale-body">
-          <div class="ultra-track"></div>
-          <div class="ultra-scale"></div>
-
-          <div id="ultraKnob" class="ultra-knob knob" aria-hidden="true"></div>
-        </div>
-
-        <div class="ultra-values">
-          <span>-50</span><span>0</span><span>+50</span>
-        </div>
-      </div>
-
-      <button id="startStop" class="start-stop hit panel" type="button" aria-label="Start Stop">
-        <span class="start-rim"></span>
-        <span class="start-label">START / STOP</span>
+      <button id="rpm33" class="rpm-btn rpm33 selected" type="button" aria-label="33 RPM">
+        <span class="rpm-ring"></span><span class="rpm-led"></span><span class="rpm-label">33</span>
+      </button>
+      <button id="rpm45" class="rpm-btn rpm45" type="button" aria-label="45 RPM">
+        <span class="rpm-ring"></span><span class="rpm-led"></span><span class="rpm-label">45</span>
       </button>
 
+      <section id="fineZone" class="fine-panel panel" aria-label="Fine pitch">
+        <div class="panel-title">FINE PITCH</div>
+        <div id="fineScaleBody" class="fine-body">
+          <div class="fine-track"></div>
+          <div class="fine-scale left"></div>
+          <div class="fine-scale right"></div>
+          <span class="fine-value v8">+8</span>
+          <span class="fine-value v4">+4</span>
+          <span class="fine-value v0">0</span>
+          <span class="fine-value vm4">-4</span>
+          <span class="fine-value vm8">-8</span>
+          <div id="fineKnob" class="fine-knob metal-knob" role="slider" aria-label="Fine pitch slider"><span></span></div>
+        </div>
+      </section>
+
+      <section id="ultraZone" class="ultra-panel panel" aria-label="Ultra pitch">
+        <div class="panel-title">ULTRA PITCH</div>
+        <div id="ultraScaleBody" class="ultra-body">
+          <div class="ultra-track"></div>
+          <div class="ultra-scale"></div>
+          <div id="ultraKnob" class="ultra-knob metal-knob" role="slider" aria-label="Ultra pitch slider"><span></span></div>
+        </div>
+        <span class="ultra-value left">-50</span><span class="ultra-value center">0</span><span class="ultra-value right">+50</span>
+      </section>
+
+      <button id="startStop" class="start-stop panel" type="button" aria-label="Start Stop">
+        <span class="start-rim"></span><span class="start-label">START / STOP</span>
+      </button>
     </section>
   </main>
-  <script src="script.js?v=1"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
